@@ -6,7 +6,7 @@ var userData = {};
 
 var saveButton = document.querySelector('#save');
 var runButton = document.querySelector('#run');
-var result = document.querySelector('#bmr');
+var metabolicRate = document.querySelector('#metabolicRate');
 
 
 var heightInput = document.querySelector('#height');
@@ -27,7 +27,7 @@ function run()
     userData.gender = genderInput.value;
     userData.activityLevel = activityLevelInput.value;
 
-    result.textContent = calculateCalories(userData.weights, userData.height, userData.age, userData.gender, userData.activityLevel);
+    metabolicRate.textContent = calculateCalories(userData.weights, userData.height, userData.age, userData.gender, userData.activityLevel);
 }
 
 

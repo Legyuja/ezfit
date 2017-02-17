@@ -1,8 +1,7 @@
 // Class definition
-
-
-// userData.weights = 10;
-var userData = {};
+var userData = {localStorage.getItem(JSON.parse(userData))};
+if (userData != null)
+    window.location.replace('progress.html');
 
 var saveButton = document.querySelector('#save');
 var runButton = document.querySelector('#run');

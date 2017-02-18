@@ -73,14 +73,14 @@ function calculateCalories(weights, height, age, gender, activityLevel)
 
 
 // newCalories()
-function newCalories()
-{
-    //to gain weight
-    if (userData.goal > 0)
+// function newCalories()
+// {
+//     //to gain weight
+//     if (userData.goal > 0)
 
-    //to lose weight
-    else if (userData.goal < 0)
-}
+//     //to lose weight
+//     else if (userData.goal < 0)
+// }
 
 // recommendations()
 

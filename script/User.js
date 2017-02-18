@@ -16,7 +16,7 @@ var genderInput = document.querySelector('#gender');
 var activityLevelInput = document.querySelector('#activityLevel');
 
 // For recommendations function
-var goalForStatus = document.querySelector('#metabolicRate');
+var goalForRecommendations = document.querySelector('#metabolicRate');
 
 saveButton.addEventListener("click", saveInput);
 runButton.addEventListener("click", run);
@@ -34,8 +34,8 @@ function reset()
     console.log("reset button pressed");
 }
 
-function run() 
-{   
+function run()
+{
     userData.weights = [];
     userData.weights.push(weightInput.value);
     userData.height = heightInput.value;
@@ -44,6 +44,7 @@ function run()
     userData.activityLevel = activityLevelInput.value;
 
     metabolicRate.textContent = calculateCalories(userData.weights, userData.height, userData.age, userData.gender, userData.activityLevel);
+    determine_recommendations.textContent = determine_recommendations();
 }
 
 
@@ -92,24 +93,24 @@ function calculateCalories(weights, height, age, gender, activityLevel)
 
 // recommendations()
 function recommendations ()
-if (goalForStatus <= 1800 || goalForStatus <= goalForStatus) {
-  weightGood = true;
-} else if (goalForStatus <= 1500 || goalForStatus <= 1800) {
-  weightMed = true;
-} else if (goalForStatus <= 1200 || goalForStatus <= 1500) {
-  weightBad = true;
+        if (goalForStatus <= 1800 || goalForStatus <= goalForStatus) {
+        weightGood = true;
+}       else if (goalForStatus <= 1500 || goalForStatus <= 1800) {
+        weightMed = true;
+}       else if (goalForStatus <= 1200 || goalForStatus <= 1500) {
+        weightBad = true;
 }
 
 // determine_recommendation()
-function determine_recommendation()
-if (weightGood == true) {
-  System.out.println("Good");
+function determine_recommendations()
+        if (weightGood == true) {
+                System.out.println("Good");
 }
 else if (weightMed == true) {
-  System.out.println("Medium");
+                System.out.println("Medium");
 }
 else if (weightBad == true) {
-  System.out.println("Bad");
+                System.out.println("Bad");
 }
 
 // isReachGoal()

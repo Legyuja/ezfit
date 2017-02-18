@@ -17,12 +17,6 @@ var genderInput = document.querySelector('#gender');
 var activityLevelInput = document.querySelector('#activityLevel');
 var goalWeightInput = document.querySelector('#goalWeight');
 
-// For recommendations function
-var goalForStatus = document.querySelector('#metabolicRate');
-var weightGood = 0;
-var weightMed = 0;
-var weightBad = 0;
-
 saveButton.addEventListener("click", saveInput);
 runButton.addEventListener("click", run);
 resetButton.addEventListener("click", reset);
@@ -48,10 +42,9 @@ function run()
     metabolicRate.textContent = calculateCalories(userData.weights, userData.height, userData.age, userData.gender, userData.activityLevel);
     recommendations(); // recommendation function
     saveInput();
-    drecommendations.textContent = determine_recommendations();
+    drecommendations.textContent = recommendations();
 
 }
-
 
 // saveInput()
 function saveInput()
@@ -96,35 +89,23 @@ function calculateCalories(weights, height, age, gender, activityLevel)
 // newWeight()
 
 // recommendations()
-function recommendations () {
-
-    if (goalForStatus <= 1800 || goalForStatus <= goalForStatus) {
-      weightGood = 1;
-    }
-    else if  (goalForStatus <= 1500 || goalForStatus <= 1800) {
-      weightMed = 1;
-    }
-    else if (goalForStatus <= 1200 || goalForStatus <= 1500) {
-      weightBad = 1;
-    }
-}
-
-// determine_recommendation()
-function determine_recommendations() {
+function recommendations() {
+  var goalForStatusTest = calculateCalories(userData.weights, userData.height, userData.age, userData.gender, userData.activityLevel);
   var text;
 
-if (weightGood == 1) {
-  text = "Your in Good state";
-
+    if (goalForStatusTest >= 1800 && goalForStatusTest < 2000) {
+      text = "Good";
+    }
+    else if  (goalForStatusTest >= 1500) {
+      text = "Medium";
+    }
+    else if (goalForStatusTest >= 1200) {
+      text = "Bad";
+    }
+    else {
+      text = "Bad";
+    }
+    return text;
 }
-else if (weightMed == 1) {
-  text = "Your in Med state";
-}
-else if (weightBad == 1) {
-  text = "Your in Bad state";
-}
-return text;
-}
-
 
 // isReachGoal()

@@ -1,8 +1,8 @@
 // Class definition
 var userData = localStorage.getItem('userData');
-if (userData != null) 
+if (userData != null)
     window.location.replace('progress.html');
-else 
+else
     userData = {};
 
 var saveButton = document.querySelector('#save');
@@ -17,6 +17,8 @@ var genderInput = document.querySelector('#gender');
 var activityLevelInput = document.querySelector('#activityLevel');
 var goalWeightInput = document.querySelector('#goalWeight');
 
+// For recommendations function
+var goalForStatus = document.querySelector('#metabolicRate');
 
 saveButton.addEventListener("click", saveInput);
 runButton.addEventListener("click", run);
@@ -29,7 +31,7 @@ function reset()
     console.log("reset button pressed");
 }
 
-function run() 
+function run()
 {
     userData.weights = [];
     userData.weights.push(weightInput.value);
@@ -41,7 +43,11 @@ function run()
     userData.goal = userData.goalWeight - userData.weights[userData.weights.length - 1];
 
     metabolicRate.textContent = calculateCalories(userData.weights, userData.height, userData.age, userData.gender, userData.activityLevel);
+    recommendations(); // recommendation function
     saveInput();
+    determinerecommendations.textContent = determine_recommendations();
+    console.log("value of goalForStatus" + goalForStatus);
+    console.log(determinerecommendations.textContent);
 }
 
 
@@ -88,5 +94,35 @@ function calculateCalories(weights, height, age, gender, activityLevel)
 // newWeight()
 
 // recommendations()
+function recommendations () {
+  var weightGood = 0;
+  var weightMed = 0;
+  var weightBad = 0;
+
+    if (goalForStatus <= 1800 || goalForStatus <= goalForStatus) {
+      weightGood = 1;
+    }
+    else if  (goalForStatus <= 1500 || goalForStatus <= 1800) {
+      weightMed = 1;
+    }
+    else if (goalForStatus <= 1200 || goalForStatus <= 1500) {
+      weightBad = 1;
+    }
+}
+
+// determine_recommendation()
+function determine_recommendations() {
+if (weightGood == 1) {
+  document.write('<p>Your in good state</p>');
+
+}
+else if (weightMed == 1) {
+  document.write('<p>Your in med state</p>');
+}
+else if (weightBad == 1) {
+  document.write('<p>Your in bad state</p>');
+}
+}
+
 
 // isReachGoal()

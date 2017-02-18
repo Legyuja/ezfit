@@ -34,8 +34,8 @@ function reset()
     console.log("reset button pressed");
 }
 
-function run() 
-{   
+function run()
+{
     userData.weights = [];
     userData.weights.push(weightInput.value);
     userData.height = heightInput.value;
@@ -44,6 +44,7 @@ function run()
     userData.activityLevel = activityLevelInput.value;
 
     metabolicRate.textContent = calculateCalories(userData.weights, userData.height, userData.age, userData.gender, userData.activityLevel);
+    determine-recommendations.textContent = determine_recommendations();
 }
 
 
@@ -103,13 +104,14 @@ if (goalForStatus <= 1800 || goalForStatus <= goalForStatus) {
 // determine_recommendation()
 function determine_recommendation()
 if (weightGood == true) {
-  System.out.println("Good");
+  document.getElementById("determine-recommendations").innerHTML = Your in good state
+  //System.out.println("Good");
 }
 else if (weightMed == true) {
-  System.out.println("Medium");
+  //System.out.println("Medium");
 }
 else if (weightBad == true) {
-  System.out.println("Bad");
+  //System.out.println("Bad");
 }
 
 // isReachGoal()

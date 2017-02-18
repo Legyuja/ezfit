@@ -14,11 +14,13 @@ var ageInput = document.querySelector('#age');
 var genderInput = document.querySelector('#gender');
 var activityLevelInput = document.querySelector('#activityLevel');
 
+// For recommendations function
+var goalForStatus = document.querySelector('#metabolicRate');
 
 saveButton.addEventListener("click", saveInput);
 runButton.addEventListener("click", run);
 
-function run() 
+function run()
 {
     userData.weights = weightInput.value;
     userData.height = heightInput.value;
@@ -74,5 +76,13 @@ function calculateCalories(weights, height, age, gender, activityLevel)
 // newWeight()
 
 // recommendations()
+function recommendations ()
+if (goalForStatus <= 1800 || goalForStatus <= goalForStatus) {
+  weightGood = true;
+} else if (goalForStatus <= 1500 || goalForStatus <= 1800) {
+  weightMed = true;
+} else if (goalForStatus <= 1200 || goalForStatus <= 1500) {
+  weightBad = true;
+}
 
 // isReachGoal()

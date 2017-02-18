@@ -1,43 +1,33 @@
 // Class definition
-var userData = localStorage.getItem('userData');
-if (userData != null)
-    window.location.replace('progress.html');
+var userData = JSON.parse(localStorage.getItem('userData'));
 
-var saveButton = document.querySelector('#save');
-var runButton = document.querySelector('#run');
+
 var resetButton = document.querySelector('#reset');
 var metabolicRate = document.querySelector('#metabolicRate');
 
+var goalWeightDisplay = document.querySelector('#goalWeight');
 
-var weightInput = document.querySelector('#weight');
-var heightInput = document.querySelector('#height');
-var ageInput = document.querySelector('#age');
-var genderInput = document.querySelector('#gender');
 var activityLevelInput = document.querySelector('#activityLevel');
+var newWeightInput = document.querySelector('#newWeight');
 
+var updateButton = document.querySelector('#update');
 
-saveButton.addEventListener("click", saveInput);
-runButton.addEventListener("click", run);
+goalWeightDisplay.textContent = userData.goalWeight;
+
 resetButton.addEventListener("click", reset);
+updateButton.addEventListener("click", update);
 
 function reset()
 {
     localStorage.clear();
-    userData = {};
-    window.location.replace(toTest.html);
+    window.location.replace("toTest.html");
     console.log("reset button pressed");
 }
 
-function run() 
-{   
-    userData.weights = [];
-    userData.weights.push(weightInput.value);
-    userData.height = heightInput.value;
-    userData.age = ageInput.value;
-    userData.gender = genderInput.value;
-    userData.activityLevel = activityLevelInput.value;
-
-    metabolicRate.textContent = calculateCalories(userData.weights, userData.height, userData.age, userData.gender, userData.activityLevel);
+function update()
+{
+    userData.weights.push(newWeightInput.value);
+    saveInput();
 }
 
 
@@ -51,7 +41,7 @@ function saveInput()
 function calculateCalories(weights, height, age, gender, activityLevel)
 {
     var multiplier;
-    var bmr;
+    var metabolicRate;
 
     switch(activityLevel)
     {
@@ -68,21 +58,29 @@ function calculateCalories(weights, height, age, gender, activityLevel)
             multiplier = 1;
     }
 
-    bmr = (10 * weights) + (6.25 * height) - (5 * age);
+    metabolicRate = (10 * weights) + (6.25 * height) - (5 * age);
 
     if (gender == "male")
-        bmr += 5;
+        metabolicRate += 5;
     else if (gender == "female")
-        bmr -= 161;
+        metabolicRate -= 161;
 
-    bmr = bmr * multiplier;
+    metabolicRate = metabolicRate * multiplier;
 
-    console.log(Math.floor(bmr));
-    return Math.floor(bmr);
+    console.log(Math.floor(metabolicRate));
+    return Math.floor(metabolicRate);
 }
 
 
-// newWeight()
+// newCalories()
+// function newCalories()
+// {
+//     //to gain weight
+//     if (userData.goal > 0)
+
+//     //to lose weight
+//     else if (userData.goal < 0)
+// }
 
 // recommendations()
 

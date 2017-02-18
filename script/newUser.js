@@ -19,6 +19,9 @@ var goalWeightInput = document.querySelector('#goalWeight');
 
 // For recommendations function
 var goalForStatus = document.querySelector('#metabolicRate');
+var weightGood = 0;
+var weightMed = 0;
+var weightBad = 0;
 
 saveButton.addEventListener("click", saveInput);
 runButton.addEventListener("click", run);
@@ -45,9 +48,8 @@ function run()
     metabolicRate.textContent = calculateCalories(userData.weights, userData.height, userData.age, userData.gender, userData.activityLevel);
     recommendations(); // recommendation function
     saveInput();
-    determinerecommendations.textContent = determine_recommendations();
-    console.log("value of goalForStatus" + goalForStatus);
-    console.log(determinerecommendations.textContent);
+    drecommendations.textContent = determine_recommendations();
+
 }
 
 
@@ -95,9 +97,6 @@ function calculateCalories(weights, height, age, gender, activityLevel)
 
 // recommendations()
 function recommendations () {
-  var weightGood = 0;
-  var weightMed = 0;
-  var weightBad = 0;
 
     if (goalForStatus <= 1800 || goalForStatus <= goalForStatus) {
       weightGood = 1;
@@ -112,16 +111,19 @@ function recommendations () {
 
 // determine_recommendation()
 function determine_recommendations() {
+  var text;
+
 if (weightGood == 1) {
-  document.write('<p>Your in good state</p>');
+  text = "Your in Good state";
 
 }
 else if (weightMed == 1) {
-  document.write('<p>Your in med state</p>');
+  text = "Your in Med state";
 }
 else if (weightBad == 1) {
-  document.write('<p>Your in bad state</p>');
+  text = "Your in Bad state";
 }
+return text;
 }
 
 

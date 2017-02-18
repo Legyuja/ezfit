@@ -7,7 +7,6 @@ else
 
 var saveButton = document.querySelector('#save');
 var runButton = document.querySelector('#run');
-var resetButton = document.querySelector('#reset');
 var metabolicRate = document.querySelector('#metabolicRate');
 
 var weightInput = document.querySelector('#weight');
@@ -19,14 +18,8 @@ var goalWeightInput = document.querySelector('#goalWeight');
 
 saveButton.addEventListener("click", saveInput);
 runButton.addEventListener("click", run);
-resetButton.addEventListener("click", reset);
 
-function reset()
-{
-    localStorage.removeItem(userData);
-    window.location.replace(toTest.html);
-    console.log("reset button pressed");
-}
+
 
 function run()
 {
@@ -40,7 +33,6 @@ function run()
     userData.goal = userData.goalWeight - userData.weights[userData.weights.length - 1];
 
     metabolicRate.textContent = calculateCalories(userData.weights, userData.height, userData.age, userData.gender, userData.activityLevel);
-    recommendations(); // recommendation function
     saveInput();
     drecommendations.textContent = recommendations();
     bmiOutput.textContent = "Your Body Mass Index is: " + "\"" + BMI() + "\"";

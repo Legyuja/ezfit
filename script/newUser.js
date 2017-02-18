@@ -19,8 +19,7 @@ var goalWeightInput = document.querySelector('#goalWeight');
 saveButton.addEventListener("click", saveInput);
 runButton.addEventListener("click", run);
 
-
-
+// Height taken in cm unit; Weight takein in kg unit
 function run()
 {
     userData.weights = [];
@@ -82,6 +81,35 @@ function calculateCalories(weights, height, age, gender, activityLevel)
 
     console.log(Math.floor(metabolicRate));
     return Math.floor(metabolicRate);
+}
+
+// FUTURE: BODY MASS INDEX ALTERNATIVE FOR RECOMMENDATION FUNCTION
+function BMI() {
+  var height = userData.height;
+  var weight = userData.weights;
+
+  height = height / 100;
+  
+  return (weight / ((height) * (height)));
+}
+
+// Source: https://www.cdc.gov/healthyweight/assessing/bmi/adult_bmi/
+function bmiScale () {
+  var bmiValue = BMI();
+  var text = "";
+  if (bmiValue < 18.5) {
+      text = "Your BMI scale is considered underweight.";
+  }
+  else if (bmiValue <= 24.9) {
+    text = "Your BMI scale is considered normal or healthy weight.";
+  }
+  else if (bmiValue <= 25.0 || bmiValue <= 29.9) {
+    text = "Your BMI scale is considered overweight.";
+  }
+  else if (bmiValue >= 30.0) {
+    text = "Your BMI scale is considered obese.";
+  }
+  return text;
 }
 
 // newWeight()

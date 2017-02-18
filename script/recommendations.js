@@ -41,7 +41,7 @@ function recommendationsBeta() {
     statusDisplay.textContent = texttodisplay;
 }
 
-// TESTED WORKING! BODY MASS INDEX ALT. FOR RECOMMENDATION FUNCTION
+// FUTURE: BODY MASS INDEX ALTERNATIVE FOR RECOMMENDATION FUNCTION
 function BMI() {
   var height = userData.height;
   var weight = userData.weights;

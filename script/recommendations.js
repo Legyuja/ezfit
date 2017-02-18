@@ -1,45 +1,44 @@
 var userData = JSON.parse(localStorage.getItem('userData'));
 
+var updateButton = document.querySelector("#update");
+var statusDisplay = document.querySelector("#status");
+
   var goalForStatus = calculateCalories(userData.weights, userData.height, userData.age, userData.gender, userData.activityLevel);
   var goalWeight = userData.goalWeight;
   var loseOrGainFactor = userData.goal;
   var weights = userData.weights;
   var currentWeight = weights[weights.length - 1];
+  var previousWeight = weights[weights.length - 2];
   var texttodisplay = "";
 
+updateButton.addEventListener("click", giveRecommendations)
+
+function giveRecommendations()
+{
+  recommendationsBeta();
+}
+
+
     // FIXME: In progress comparison currentWeight - Goal weight
-    function recommendationsBeta() {
+function recommendationsBeta() {
     if (loseOrGainFactor > 0) { //gaining weight
-        if ((goalWeight - currentWeight) > 3) {
+        if ((currentWeight - previousWeight) > 0) {
             texttodisplay = "Keep it up! Your almost reaching your goal.";
         }
-        else if ((goalWeight - currentWeight) < 3) {
+        else {
             texttodisplay = "You need to work on your goal.";
         }
     }
-    else {
-       if ((currentWeight - goalWeight) < 3) {
+    else if (loseOrGainFactor < 0){
+       if ((currentWeight - previousWeight) < 0) {
            texttodisplay = "Keep it up! Your almost reaching your goal.";
        }
-       else if((currentWeight - goalWeight) < 3) {
+       else {
                texttodisplay = "You need to work on your goal.";
        }
-
-    }
-  }
-function recommendations() {
-    // FIXME: 2000 cannot be goalForStatusTest because same variable cannot be compared
-    if (goalForStatus >= 1800 && goalForStatus < 2000) {
-      text = "Good";
-    }
-    else if  (goalForStatus >= 1500) {
-      text = "Medium";
-    }
-    else if (goalForStatus >= 1200 || goalForStatus < 1200) {
-      text = "Bad";
     }
 
-    return text;
+    statusDisplay.textContent = texttodisplay;
 }
 
 // TESTED WORKING! BODY MASS INDEX ALT. FOR RECOMMENDATION FUNCTION

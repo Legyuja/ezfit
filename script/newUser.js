@@ -34,7 +34,6 @@ function run()
 
     metabolicRate.textContent = calculateCalories(userData.weights, userData.height, userData.age, userData.gender, userData.activityLevel);
     saveInput();
-    drecommendations.textContent = recommendations();
     bmiOutput.textContent = "Your Body Mass Index is: " + "\"" + BMI() + "\"";
     bmiScaleOutput.textContent = bmiScale ();
 

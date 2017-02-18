@@ -72,6 +72,11 @@ function calculateCalories(weights, height, age, gender, activityLevel)
             multiplier = 1;
     }
 
+    if (userData.goal > 0)
+        multiplier += 0.2;
+    else if (userData.goal < 0)
+        multiplier -= 0.2;
+
     metabolicRate = (10 * weights) + (6.25 * height) - (5 * age);
 
     if (gender == "male")

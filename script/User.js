@@ -85,4 +85,16 @@ if (goalForStatus <= 1800 || goalForStatus <= goalForStatus) {
   weightBad = true;
 }
 
+// determine_recommendation()
+function determine_recommendation()
+if (weightGood == true) {
+  System.out.println("Good");
+}
+else if (weightMed == true) {
+  System.out.println("Medium");
+}
+else if (weightBad == true) {
+  System.out.println("Bad");
+}
+
 // isReachGoal()

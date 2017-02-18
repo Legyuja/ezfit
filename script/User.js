@@ -44,7 +44,11 @@ function run()
     userData.activityLevel = activityLevelInput.value;
 
     metabolicRate.textContent = calculateCalories(userData.weights, userData.height, userData.age, userData.gender, userData.activityLevel);
+<<<<<<< HEAD
     determine_recommendations.textContent = determine_recommendations();
+=======
+    determine-recommendations.textContent = determine_recommendations();
+>>>>>>> d18f7cfbe36a49c20c0f0e39448e85f413f9665c
 }
 
 
@@ -102,6 +106,7 @@ function recommendations ()
 }
 
 // determine_recommendation()
+<<<<<<< HEAD
 function determine_recommendations()
         if (weightGood == true) {
                 System.out.println("Good");
@@ -111,6 +116,18 @@ else if (weightMed == true) {
 }
 else if (weightBad == true) {
                 System.out.println("Bad");
+=======
+function determine_recommendation()
+if (weightGood == true) {
+  document.getElementById("determine-recommendations").innerHTML = Your in good state
+  //System.out.println("Good");
+}
+else if (weightMed == true) {
+  //System.out.println("Medium");
+}
+else if (weightBad == true) {
+  //System.out.println("Bad");
+>>>>>>> d18f7cfbe36a49c20c0f0e39448e85f413f9665c
 }
 
 // isReachGoal()

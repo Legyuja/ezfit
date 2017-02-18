@@ -99,12 +99,10 @@ function recommendations() {
     else if  (goalForStatusTest >= 1500) {
       text = "Medium";
     }
-    else if (goalForStatusTest >= 1200) {
+    else if (goalForStatusTest >= 1200 || goalForStatusTest < 1200) {
       text = "Bad";
     }
-    else {
-      text = "Bad";
-    }
+
     return text;
 }
 

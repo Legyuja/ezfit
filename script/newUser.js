@@ -89,8 +89,8 @@ function BMI() {
   var weight = userData.weights;
 
   height = height / 100;
-  
-  return (weight / ((height) * (height)));
+
+  return (weight / ((height) * (height)) ).toFixed(2);
 }
 
 // Source: https://www.cdc.gov/healthyweight/assessing/bmi/adult_bmi/

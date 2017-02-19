@@ -1,0 +1,230 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+        <meta charset="UTF-8">
+        <title>EZFit | Weight or Loss Gain</title>
+        <link href="https://fonts.googleapis.com/css?family=Galada" rel="stylesheet">
+
+<style>
+
+        * {
+                padding: 0px;
+                margin: 0px;
+        }
+
+        header {
+                height: 90px;
+        }
+
+        #logo {
+                width: 105px;
+                padding: 20px;
+
+        }
+
+        #social-media {
+                width: 300px;
+                padding: 20px;
+                margin-top: -85px;
+                float: right;
+        }
+
+        #first-wallpaper {
+                width: 100%;
+        }
+
+        #first-h1 {
+                width: 100%;
+                text-align: center;
+                color: white;
+                font-size: 500%;
+                font-family: Futura, arial, sans-serif;
+                font-weight: bold;
+                margin-top: -55%;
+        }
+
+        /*
+        #goal-box {
+                background-color: #F14364;
+                border: 1px solid blue;
+        }
+        */
+
+        #goal-text span {
+                display: inline-block;
+                background-color: #F14364;
+        }
+
+        #goal-text {
+                line-height: normal;
+                color: white;
+                text-align: center;
+                font-size: 500%;
+                font-family: 'Galada', cursive;
+        }
+
+        #second {
+        }
+
+        #lets-get-started {
+                text-align: center;
+                color: #E8C67A;
+                font-size: 500%;
+                font-family: Futura, arial, sans-serif;
+                font-weight: bold;
+                margin-top: 350px;
+        }
+
+        #yellow-box {
+                background-color: #E8C67A;
+                margin-top: 30px;
+                height: 650px;
+
+        }
+
+        #do-you-wish {
+                padding-top: 20px;
+                padding-bottom: 20px;
+                text-align: center;
+                font-size: 30px;
+                color: white;
+                font-family: avenir, arial, sans-serif;
+                font-weight: bold;
+                letter-spacing: 1.5px;
+        }
+
+        #or {
+                color: white;
+                font-family: avenir, arial, sans-serif;
+                font-weight: 500;
+        }
+
+        form {
+                text-align: center;
+        }
+
+        label {
+                color: white;
+                font-family: avenir, arial, sans-serif;
+                font-weight: 500;
+        }
+
+        input {
+                padding: 5px;
+		margin-bottom: 13px;
+		font-size: 100%;
+		font-family: "Avenir Light", sans-serif, arial, times;
+		background-color: none;
+		border: none;
+        }
+
+        input [type="radio"] {
+                display: none;
+        }
+
+        button {
+                padding: 10px;
+                background-color: white;
+        }
+
+
+</style>
+
+<head>
+
+<body>
+<header>
+        <div>
+                <h1><a><img id="logo" src="new-logo.png"/></a></h1>
+        </div>
+
+        <div>
+                <img id="social-media" src="social.png"/>
+        </div>
+</header>
+
+<div id="page-wrapper">
+
+        <div id="first">
+                <img id="first-wallpaper" src="straw.jpg"/>
+
+                <h1 id="first-h1">An easier way to reach your fitness</h1>
+
+                <h1 id="goal-text"><span>goal<span></h1>
+        </div>
+
+        <div id="second">
+                <h1 id="lets-get-started">Let's get started</h1>
+
+                <div id="yellow-box">
+                        <p id="do-you-wish">Do you wish to..</p>
+
+                        <form>
+                                <label for="option-two">
+                                        <input id="option-one" type="radio" name="optionsRadios" value="option1">
+                                        LOSE WEIGHT
+                                </label>
+
+                                <p id="or">or</p>
+
+                                <label for="option-one">
+                                        <input id="option-two" type="radio" name="optionsRadios" value="option2">
+                                        GAIN WEIGHT
+                                </label>
+
+                                <br/>
+
+                                <label>Weight<br/><input id="weight"></input></label><br/>
+                                <label>Height<br/><input id="height"></input></label><br/>
+                                <label>Age<br/><input id="age"></input></label><br/>
+                                <label for="gender">Gender</label><br/>
+                                        <select id="gender">
+                                                <option></option>
+                                                <option>Male</option>
+                                                <option>Female</option>
+                                        </select>
+                                        <br/>
+                                <label for="activityLevel">Activity level</label><br/>
+                                <select id="activityLevel" type="option"><br/>
+                                        <option></option>
+                                        <option>Not Active</option>
+                                        <option>Active 1-3 times/week</option>
+                                        <option>Very Active 4-6 times/week</option>
+                                </select>
+                                <br/>
+                                <label>Goal Weight<br/><input id="goalWeight"></input></label></br>
+
+                                <button id="run">Run</button>
+                                <button id="save">Save</button>
+
+                                <p id="metabolicRate">This gives metabolic rate value.</p>
+                                <p id="drecommendations">This gives recommendations.</p>
+                                <p id="bmiOutput"></p>
+                                <p id="bmiScaleOutput"></p>
+
+<!--
+                                <form>
+                                        <label id="first-email" style="color: red; margin-right: 230px;">email</label><br/><input type="email" name="email" size="30" maxlength="100" placeholder="Email"/>
+                                        <input type="username" name="username" size="30" maxlength="100" placeholder="Username"/><br/>
+                                        <input type="password" name="password" size="30" maxlength="100" placeholder="Password"/><br/>
+                                        <input type="password" name="passwordcon" size="30" maxlength="100" placeholder="Confirm Password"/><br/>
+                                        <label><input type="radio" name="type" value="contractor">Contractor</label>
+                                        <label><input type="radio" name="type" value="contractor">Architect</label>
+                                        <input type="submit" name="valid" value="Create Account"/><br/>
+                                        <a id="login" href="login.html">Login</a>
+                                </form>
+-->
+
+                        </form>
+                </div>
+        </div>
+
+
+</div>
+
+<footer>
+
+</footer>
+</body>
+
+<html>

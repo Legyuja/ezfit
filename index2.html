@@ -53,6 +53,8 @@
         #goal-text span {
                 display: inline-block;
                 background-color: #F14364;
+                padding-left: 10px;
+                padding-right: 10px;
         }
 
         #goal-text {
@@ -72,7 +74,7 @@
                 font-size: 500%;
                 font-family: Futura, arial, sans-serif;
                 font-weight: bold;
-                margin-top: 350px;
+                margin-top: 400px;
         }
 
         #yellow-box {
@@ -180,8 +182,8 @@
                                 <label for="gender">Gender</label><br/>
                                         <select id="gender">
                                                 <option></option>
-                                                <option>Male</option>
-                                                <option>Female</option>
+                                                <option id="male" value="male">Male</option>
+                                                <option id="female" value="female">Female</option>
                                         </select>
                                         <br/>
                                 <label for="activityLevel">Activity level</label><br/>
@@ -194,10 +196,12 @@
                                 <br/>
                                 <label>Goal Weight<br/><input id="goalWeight"></input></label></br>
 
-                                <button id="run">Run</button>
-                                <button id="save">Save</button>
+                                <button id="run" type="button" onsubmit="return false">Run</button>
+                                <button id="save">Save</button><br/>
 
+                                <br/>
                                 <p id="metabolicRate">This gives metabolic rate value.</p>
+                                <br/>
                                 <p id="drecommendations">This gives recommendations.</p>
                                 <p id="bmiOutput"></p>
                                 <p id="bmiScaleOutput"></p>
@@ -225,6 +229,8 @@
 <footer>
 
 </footer>
+<script type="text/javascript" src="script/newUser.js"></script>
+<!--<script type="text/javascript" src="script/recommendations.js"></script>-->
 </body>
 
 <html>

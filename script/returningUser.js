@@ -18,7 +18,7 @@ updateButton.addEventListener("click", update);
 function reset()
 {
     localStorage.clear();
-    window.location.replace("toTest.html");
+    window.location.replace("index2.html");
     console.log("reset button pressed");
 }
 
